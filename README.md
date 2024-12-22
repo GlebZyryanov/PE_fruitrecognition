@@ -50,6 +50,12 @@ PE-fruitrecognition/
 
 ![image](https://github.com/user-attachments/assets/bd8caa34-8360-4b9a-9805-a543d4a7a75e)
 
+### Планирование и сроки задачи велись в Битрикс24
+Сроки были поставлены в рамках задания
+
+![image](https://github.com/user-attachments/assets/6a8deec7-3fa1-4d9d-b6db-1b0d89efee2b)
+
+
 Пример вывода:
 ![image](https://github.com/user-attachments/assets/1b1fb2ec-9c4c-4bf3-942c-5e8c676569c8)
 
