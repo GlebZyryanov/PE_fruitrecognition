@@ -1,0 +1,8 @@
+# Исключаем датасет
+Fruit-Images-Dataset-master/
+# Исключаем временные файлы Python
+__pycache__/
+*.pyc
+*.pyo
+# Исключаем виртуальное окружение
+venv/
