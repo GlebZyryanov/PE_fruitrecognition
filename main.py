@@ -5,6 +5,7 @@ import sys
 import zipfile
 import urllib.request
 import shutil
+import json
 
 def ensure_dataset(dataset_dir="./Fruit-Images-Dataset-master"):
     """
@@ -132,17 +133,26 @@ def train_and_save_model():
     plt.ylabel("Accuracy")
     plt.legend()
     plt.show()
+    
 
 def load_and_test_model(image_path):
     # Проверяем, что модель сохранена
     if not os.path.isfile("fruit_recognition_model.h5"):
         print("[ERROR] файл fruit_recognition_model.h5 не найден. Сначала выполните train.")
         return
+    
+    if not os.path.isfile("class_names.json"):
+        print("[ERROR] файл class_names.json не найден.")
+        return
 
     model = load_model("fruit_recognition_model.h5")
 
     def predict_image(image_path, model):
         from tensorflow.keras.preprocessing.image import load_img, img_to_array
+
+        # Загрузка имен классов
+        with open("class_names.json", "r") as f:
+            class_names = json.load(f)
 
         image = load_img(image_path, target_size=img_size)
         image_array = img_to_array(image) / 255.0
